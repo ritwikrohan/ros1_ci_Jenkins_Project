@@ -12,6 +12,7 @@ services:
 
   tortoisebot-ros1-test:
     image: ritwikrohan/ritwikrohan-cp24:tortoisebot-ros1-test
+    container_name: tortoisebot-test
     environment:
       - DISPLAY
       - ROS_MASTER_URI=http://tortoisebot-roscore:11311

@@ -25,10 +25,9 @@ pipeline {
             steps {
                 sh 'cd ~/catkin_ws/src/ros1_ci'
                 sh '''
-                docker-compose up
-                DOCKER_ID=$!
+                docker-compose up -d
                 sleep 60s
-                kill $DOCKER_ID
+                docker logs tortoisebot-test
                 '''
             }
         }
