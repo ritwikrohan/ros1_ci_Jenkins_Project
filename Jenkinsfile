@@ -55,7 +55,7 @@ pipeline {
         stage('Print Docker Compose Logs') {
             steps {
                 sh '''
-                sleep 50s
+                sleep 60s
                 docker logs tortoisebot-test
                 '''
             }
