@@ -52,14 +52,14 @@ pipeline {
                 }
             }
         }
-        stage('Print Docker Compose Logs') {
-            steps {
-                sh '''
-                sleep 50s
-                docker logs tortoisebot-test
-                '''
-            }
-        }
+        // stage('Print Docker Compose Logs') {
+        //     steps {
+        //         sh '''
+        //         sleep 50s
+        //         docker logs tortoisebot-test
+        //         '''
+        //     }
+        // }
         stage('Done') {
             steps {
                 sleep 5
