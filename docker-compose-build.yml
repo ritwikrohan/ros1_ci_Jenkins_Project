@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  tortoisebot-roscore:
+    image: ros:noetic-ros-core
+    container_name: tortoisebot-roscore
+    command: roscore
+    networks:
+      - rosnet
+    expose:
+      - "11311"
+
+  tortoisebot-ros1-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DISPLAY
+      - ROS_MASTER_URI=http://tortoisebot-roscore:11311
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    networks:
+      - rosnet
+    depends_on:
+      - tortoisebot-roscore
+    # restart: "always"  # Run in detached mode
+
+networks:
+  rosnet:
+    driver: bridge
