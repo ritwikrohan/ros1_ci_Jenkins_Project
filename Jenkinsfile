@@ -26,7 +26,7 @@ pipeline {
                 sh 'cd ~/catkin_ws/src/ros1_ci'
                 sh '''
                 docker-compose up -d
-                sleep 60s
+                sleep 50s
                 docker logs tortoisebot-test
                 '''
             }
