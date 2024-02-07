@@ -24,7 +24,12 @@ pipeline {
         stage('Start Docker Compose') {
             steps {
                 sh 'cd ~/catkin_ws/src/ros1_ci'
-                sh 'docker-compose up -d'
+                sh '''
+                docker-compose up
+                DOCKER_ID=$!
+                sleep 60s
+                kill $DOCKER_ID
+                '''
             }
         }
         stage('Done') {
