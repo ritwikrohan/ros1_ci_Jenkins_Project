@@ -35,8 +35,8 @@ This guide outlines the steps to set up Jenkins for Continuous Integration in th
 
 2. Triggering build through pull request:
   - In this repository, add a test.txt file and create a pull request.
-  - After the pull request is accepted,check build exector tab in jenkins.
-  - you will see that ros1_ci has started building because of the SCM change.
+  - After the pull request is accepted,Click "ros1_ci" or check build exector tab in jenkins.
+  - After sometime, you will see that ros1_ci has started building because of the SCM change.
   - Click the build dropdown and select Console Output to check whats happening.
   - Docker will pull the image from dockerhub and build the image and run it automatically.
   - After build is complete. check the rosject tab where

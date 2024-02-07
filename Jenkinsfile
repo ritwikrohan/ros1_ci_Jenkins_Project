@@ -24,7 +24,7 @@ pipeline {
         stage('Start Docker Compose') {
             steps {
                 sh 'cd ~/catkin_ws/src/ros1_ci'
-                sh 'docker-compose up -d'
+                sh 'sudo docker-compose up -d'
             }
         }
         stage('Wait for Docker Compose to Complete') {
@@ -34,7 +34,7 @@ pipeline {
                     def retryCount = 0
 
                     while (retryCount < maxRetries) {
-                        def result = sh(script: 'docker-compose ps', returnStatus: true)
+                        def result = sh(script: 'sudo docker-compose ps', returnStatus: true)
 
                         if (result == 0) {
                             echo 'Docker Compose services are ready!'
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 sh '''
                 sleep 60s
-                docker logs tortoisebot-test
+                sudo docker logs tortoisebot-test
                 '''
             }
         }
