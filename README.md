@@ -3,6 +3,10 @@
 
 This guide outlines the steps to set up Jenkins for Continuous Integration in the `ros1_ci` repository. Follow these instructions to ensure the automation of building and testing processes.
 
+## GitHub
+
+https://github.com/ritwikrohan/ros1_ci.git
+
 ## Prerequisites
 
 1. Install Jenkins on your server. Shell file for latest Jenkins version is already in the rosject. Paste the command below in your rosject terminal. 
