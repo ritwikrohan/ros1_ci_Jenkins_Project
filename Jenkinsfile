@@ -24,7 +24,7 @@ pipeline {
         stage('Start Docker Compose') {
             steps {
                 sh 'cd ~/catkin_ws/src/ros1_ci'
-                sh 'docker-compose up'
+                sh 'docker-compose up -d'
             }
         }
         stage('Done') {
